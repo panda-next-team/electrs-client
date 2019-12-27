@@ -88,14 +88,17 @@ type UnspentTransactionOutput struct {
 }
 
 type Block struct {
-	ID         BlockHash `json:"id"`
-	Height     int32     `json:"height"`
-	Version    int32     `json:"version"`
-	Timestamp  int32     `json:"timestamp"`
-	TxCount    int32     `json:"tx_count"`
-	Size       int32     `json:"size"`
-	Weight     int32     `json:"weight"`
-	MerkleRoot string    `json:"merkle_root"`
+	ID                BlockHash `json:"id"`
+	Height            int32     `json:"height"`
+	Version           int32     `json:"version"`
+	Timestamp         int32     `json:"timestamp"`
+	TxCount           int32     `json:"tx_count"`
+	Size              int32     `json:"size"`
+	Weight            int32     `json:"weight"`
+	MerkleRoot        string    `json:"merkle_root"`
+	PreviousBlockHash BlockHash `json:"previousblockhash"`
+	Nonce             int32     `json:"nonce"`
+	Bits              int32     `json:"bits"`
 }
 
 type BlockStatus struct {
