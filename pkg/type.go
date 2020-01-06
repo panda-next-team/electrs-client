@@ -40,13 +40,13 @@ type TransactionIn struct {
 
 type TransactionStatus struct {
 	Confirmed   bool   `json:"confirmed"`
-	BlockHeight int32  `json:"block_height"`
+	BlockHeight BlockHeight  `json:"block_height"`
 	BlockHash   string `json:"block_hash"`
 	BlockTime   int32  `json:"block_time"`
 }
 
 type TransactionMerkleProof struct {
-	BlockHeight int32    `json:"block_height"`
+	BlockHeight BlockHeight    `json:"block_height"`
 	Merkle      []string `json:"merkle"`
 	Pos         int32    `json:"pos"`
 }
@@ -89,7 +89,7 @@ type UnspentTransactionOutput struct {
 
 type Block struct {
 	ID                BlockHash `json:"id"`
-	Height            int32     `json:"height"`
+	Height            BlockHeight     `json:"height"`
 	Version           int32     `json:"version"`
 	Timestamp         int32     `json:"timestamp"`
 	TxCount           int32     `json:"tx_count"`
@@ -103,7 +103,7 @@ type Block struct {
 
 type BlockStatus struct {
 	InBestChain bool      `json:"in_best_chain"`
-	Height      int32     `json:"height"`
+	Height      BlockHeight     `json:"height"`
 	NextBest    BlockHash `json:"next_best"`
 }
 
