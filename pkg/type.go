@@ -39,16 +39,16 @@ type TransactionIn struct {
 }
 
 type TransactionStatus struct {
-	Confirmed   bool   `json:"confirmed"`
-	BlockHeight BlockHeight  `json:"block_height"`
-	BlockHash   string `json:"block_hash"`
-	BlockTime   int32  `json:"block_time"`
+	Confirmed   bool        `json:"confirmed"`
+	BlockHeight BlockHeight `json:"block_height"`
+	BlockHash   string      `json:"block_hash"`
+	BlockTime   int32       `json:"block_time"`
 }
 
 type TransactionMerkleProof struct {
-	BlockHeight BlockHeight    `json:"block_height"`
-	Merkle      []string `json:"merkle"`
-	Pos         int32    `json:"pos"`
+	BlockHeight BlockHeight `json:"block_height"`
+	Merkle      []string    `json:"merkle"`
+	Pos         int32       `json:"pos"`
 }
 
 type TransactionOutSpend struct {
@@ -88,23 +88,23 @@ type UnspentTransactionOutput struct {
 }
 
 type Block struct {
-	ID                BlockHash `json:"id"`
-	Height            BlockHeight     `json:"height"`
-	Version           int32     `json:"version"`
-	Timestamp         int32     `json:"timestamp"`
-	TxCount           int32     `json:"tx_count"`
-	Size              int32     `json:"size"`
-	Weight            int32     `json:"weight"`
-	MerkleRoot        string    `json:"merkle_root"`
-	PreviousBlockHash BlockHash `json:"previousblockhash"`
-	Nonce             int32     `json:"nonce"`
-	Bits              int32     `json:"bits"`
+	ID                BlockHash   `json:"id"`
+	Height            BlockHeight `json:"height"`
+	Version           int32       `json:"version"`
+	Timestamp         int32       `json:"timestamp"`
+	TxCount           int32       `json:"tx_count"`
+	Size              int32       `json:"size"`
+	Weight            int32       `json:"weight"`
+	MerkleRoot        string      `json:"merkle_root"`
+	PreviousBlockHash BlockHash   `json:"previousblockhash"`
+	Nonce             int64       `json:"nonce"`
+	Bits              int64       `json:"bits"`
 }
 
 type BlockStatus struct {
-	InBestChain bool      `json:"in_best_chain"`
-	Height      BlockHeight     `json:"height"`
-	NextBest    BlockHash `json:"next_best"`
+	InBestChain bool        `json:"in_best_chain"`
+	Height      BlockHeight `json:"height"`
+	NextBest    BlockHash   `json:"next_best"`
 }
 
 type MemPoolStatistics struct {
