@@ -10,7 +10,7 @@ type BlockHeight int32
 type Transaction struct {
 	ID       TxID              `json:"txid"`
 	Version  int32             `json:"version"`
-	LockTime int32             `json:"locktime"`
+	LockTime int64             `json:"locktime"`
 	VIn      []*TransactionIn  `json:"vin"`
 	VOut     []*TransactionOut `json:"vout"`
 	Size     int32             `json:"size"`
