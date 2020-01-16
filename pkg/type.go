@@ -72,7 +72,7 @@ type ScriptHashInfo struct {
 
 type ChainStats struct {
 	FoundedTxoCount int32   `json:"funded_txo_count"`
-	FoundedTxoSum   float64 `json:"founded_txo_sum"`
+	FoundedTxoSum   float64 `json:"funded_txo_sum"`
 	SpentTxoCount   int32   `json:"spent_txo_count"`
 	SpentTxoSum     float64 `json:"spent_txo_sum"`
 	TxCount         int32   `json:"tx_count"`
