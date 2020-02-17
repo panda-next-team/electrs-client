@@ -110,7 +110,7 @@ type BlockStatus struct {
 type MemPoolStatistics struct {
 	Count        int32         `json:"count"`
 	VSize        int32         `json:"vsize"`
-	TotalFee     int64         `json:"totalFee"`
+	TotalFee     int64         `json:"total_fee"`
 	FeeHistogram []interface{} `json:"fee_histogram"`
 }
 
