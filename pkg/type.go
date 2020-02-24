@@ -101,6 +101,12 @@ type Block struct {
 	Bits              int64       `json:"bits"`
 }
 
+type Blocks []*Block
+
+func (b Blocks) Len() int           { return len(b) }
+func (b Blocks) Less(i, j int) bool { return b[i].Height < b[j].Height}
+func (b Blocks) Swap(i, j int)      { b[i], b[j] = b[j], b[i]}
+
 type BlockStatus struct {
 	InBestChain bool        `json:"in_best_chain"`
 	Height      BlockHeight `json:"height"`

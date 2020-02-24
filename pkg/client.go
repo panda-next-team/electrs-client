@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/go-resty/resty/v2"
+	"sort"
 	"strconv"
 )
 
@@ -292,7 +293,7 @@ func (c *HTTPClient) GetBlockHash(height BlockHeight) (BlockHash, error) {
 	return BlockHash(result), nil
 }
 
-func (c *HTTPClient) GetBlocks(height BlockHeight) ([]*Block, error) {
+func (c *HTTPClient) GetBlocks(height BlockHeight) (Blocks, error) {
 	uri := fmt.Sprintf("/blocks/%d", height)
 	result, err := c.doGetBody(uri)
 
@@ -300,11 +301,12 @@ func (c *HTTPClient) GetBlocks(height BlockHeight) ([]*Block, error) {
 		return nil, err
 	}
 
-	blocks := make([]*Block, 0)
+	blocks := make(Blocks, 0)
 	err = json.Unmarshal(result, &blocks)
 	if err != nil {
 		return nil, err
 	}
+	sort.Sort(blocks)
 	return blocks, nil
 }
 
